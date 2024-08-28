@@ -1,0 +1,12 @@
+
+services:
+  api-solid-pg:
+    image: bitnami/postgresql:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=adminApiSolid
+      - POSTGRES_USER=adminDbApi
+      - POSTGRES_DB=node_api_solid

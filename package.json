@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-api-solid",
+  "version": "1.0.0",
+  "description": "Gympass style app.",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "lint": "eslint src --ext .ts --fix",
+    "migrate:prisma:dev": "dotenv -e .env.local -- npx prisma migrate dev",
+    "prisma:studio": "dotenv -e .env.local -- npx prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "9.9.1",
+    "@rocketseat/eslint-config": "2.2.2",
+    "@types/bcryptjs": "2.4.6",
+    "@types/node": "22.5.1",
+    "eslint": "8.57.0",
+    "globals": "15.9.0",
+    "prisma": "5.19.0",
+    "tsup": "8.2.4",
+    "tsx": "4.19.0",
+    "typescript": "5.5.4",
+    "typescript-eslint": "8.3.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.19.0",
+    "bcryptjs": "2.4.3",
+    "dotenv": "16.4.5",
+    "dotenv-cli": "7.4.2",
+    "fastify": "4.28.1",
+    "zod": "3.23.8"
+  }
+}
