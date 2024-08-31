@@ -3,7 +3,7 @@ import { Gym, Prisma } from '@prisma/client'
 import { FindManyNearbyParams, GymsRepository } from '../gyms-repository'
 import { randomUUID } from 'crypto'
 import { getDistanceBetweenCoordinates } from '@/utils/get-distance-between-coordinates'
-import { requirements_non_functional } from '@/config'
+import { requirements_non_functional as rnf } from '@/config'
 
 export class InMemoryGymsRepository implements GymsRepository {
   public items: Gym[] = []
@@ -16,7 +16,9 @@ export class InMemoryGymsRepository implements GymsRepository {
           longitude: item.longitude.toNumber(),
         },
       )
-      return distance < requirements_non_functional.nearby_distance_gym
+      return rnf.type_nearby_distance_gym === 'kilometers'
+        ? distance < rnf.nearby_distance_gym
+        : distance < rnf.nearby_distance_gym / 1000
     })
   }
 

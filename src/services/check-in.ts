@@ -5,6 +5,7 @@ import { ResourceNotFound } from './errors/resource-not-found-error'
 import { getDistanceBetweenCoordinates } from '@/utils/get-distance-between-coordinates'
 import { MaxDistanceError } from './errors/max-distance-error'
 import { MaxNumberCheckInsError } from './errors/max-number-of-check-ins-error'
+import { requirements_non_functional as rnf } from '@/config'
 
 interface CheckInRequest {
   userId: string
@@ -44,7 +45,10 @@ export class CheckInService {
       },
     )
 
-    const MAX_DISTANCE_IN_KILOMETERS = 0.1
+    const MAX_DISTANCE_IN_KILOMETERS =
+      rnf.type_distance_gym === 'meters'
+        ? rnf.distance_gym / 1000
+        : rnf.distance_gym
 
     if (distance > MAX_DISTANCE_IN_KILOMETERS) {
       throw new MaxDistanceError()
