@@ -13,6 +13,8 @@ const configSchema = z.object({
       .enum(['meters', 'kilometers'])
       .default('meters'),
     nearby_distance_gym: z.number().default(10),
+    type_distance_time_checkIn: z.enum(['minute', 'hour']).default('minute'),
+    distance_time_checkIn: z.number().default(20),
   }),
 })
 

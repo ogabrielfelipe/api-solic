@@ -1,7 +1,12 @@
 
 non_functional_requirements:
   items_page: 20
+  
   type_distance_gym: meters
   distance_gym: 100
+
   type_nearby_distance_gym: kilometers
   nearby_distance_gym: 10
+
+  type_distance_time_checkIn: minute
+  distance_time_checkIn: 20
