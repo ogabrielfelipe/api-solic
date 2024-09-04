@@ -48,7 +48,6 @@ describe('Fetch User Check-in history Services', () => {
       userId: 'user-id-1',
       page: 2,
     })
-    console.log(checkIns)
 
     expect(checkIns).toHaveLength(2)
     expect(checkIns).toEqual([

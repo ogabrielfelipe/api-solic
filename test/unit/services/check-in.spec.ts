@@ -41,8 +41,6 @@ describe('Check-in Services', () => {
       userLongitude: -41.6186368,
     })
 
-    console.log(checkIn.created_at)
-
     expect(checkIn.id).toEqual(expect.any(String))
   })
 
