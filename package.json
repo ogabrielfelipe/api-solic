@@ -9,21 +9,15 @@
     "start:dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "lint": "eslint src --ext .ts --fix",
-    
-
     "test:create-prisma-environment": "npm link ./prisma/vitest-environment-prisma",
     "test:install-prisma-environment": "npm link vitest-environment-prisma",
-
     "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
     "test:e2e": "vitest run --dir test/E2E",
     "test:e2e:watch": "vitest watch --dir test/E2E",
     "test:watch": "vitest --dir test/unit/services",
-    
     "test:unit": "vitest run --dir test/unit/services",
-
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-
     "migrate:prisma:dev": "dotenv -e .env.local -- npx prisma migrate dev",
     "migrate:prisma:deploy": "dotenv -e .env.local -- npx prisma migrate deploy",
     "prisma:studio": "dotenv -e .env.local -- npx prisma studio"
@@ -52,6 +46,7 @@
     "vitest": "2.0.5"
   },
   "dependencies": {
+    "@fastify/cookie": "9.4.0",
     "@fastify/jwt": "8.0.1",
     "@prisma/client": "5.19.0",
     "bcryptjs": "2.4.3",

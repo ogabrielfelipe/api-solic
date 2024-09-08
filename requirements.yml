@@ -10,3 +10,6 @@ non_functional_requirements:
 
   type_distance_time_checkIn: minute
   distance_time_checkIn: 20
+
+  expires_time_jwt: 10m
+  expires_time_refresh_jwt: 7d

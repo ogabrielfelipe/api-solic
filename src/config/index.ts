@@ -15,6 +15,8 @@ const configSchema = z.object({
     nearby_distance_gym: z.number().default(10),
     type_distance_time_checkIn: z.enum(['minute', 'hour']).default('minute'),
     distance_time_checkIn: z.number().default(20),
+    expires_time_jwt: z.string(),
+    expires_time_refresh_jwt: z.string(),
   }),
 })
 
