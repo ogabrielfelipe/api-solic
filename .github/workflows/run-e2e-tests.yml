@@ -13,9 +13,9 @@ jobs:
               ports:
                 - 5432:5432
               env:
-                - POSTGRES_PASSWORD=adminApiSolid
-                - POSTGRES_USER=adminDbApi
-                - POSTGRES_DB=node_api_solid
+                POSTGRES_PASSWORD: adminApiSolid
+                POSTGRES_USER: adminDbApi
+                POSTGRES_DB: node_api_solid
 
         steps:
             - uses: actions/checkout@v4
