@@ -12,7 +12,7 @@ jobs:
               image: bitnami/postgresql:latest
               ports:
                 - 5432:5432
-              environment:
+              env:
                 - POSTGRES_PASSWORD=adminApiSolid
                 - POSTGRES_USER=adminDbApi
                 - POSTGRES_DB=node_api_solid
